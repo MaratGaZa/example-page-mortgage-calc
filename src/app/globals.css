@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+    --background: #020617;
+    --foreground: #f8fafc;
+    --primary: #7c3aed;
+    --primary-foreground: #ffffff;
+    --secondary: #1e1b4b;
+    --accent: #a855f7;
+    --border: #1e293b;
+}
+
+body {
+    color: var(--foreground);
+    background: radial-gradient(circle at top center, #1e1b4b 0%, #020617 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@layer base {
+    * {
+        @apply border-slate-800;
+    }
+    body {
+        @apply text-slate-200 antialiased;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold tracking-tight text-white;
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    }
+
+    .input-field {
+        @apply w-full bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all outline-none;
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 rounded-xl transition-all active:scale-95 shadow-lg shadow-violet-500/20;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-300;
+    }
+}
